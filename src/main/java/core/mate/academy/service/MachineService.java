@@ -8,7 +8,7 @@ import java.util.List;
 
 public interface MachineService<T extends Machine> {
 
-    List<Machine> getAll(Class<? extends Machine> type);
+    List<T> getAll(Class<? extends Machine> type);
 
     /**
      * Fill the machines list with passed value
@@ -18,7 +18,7 @@ public interface MachineService<T extends Machine> {
      * @param machines - list of machines to be filled with value
      * @param value    - any object of machine sub class
      */
-    void fill(List<? super Machine> machines, Machine value);
+    void fill(List<? super Machine> machines, T value);
 
     /**
      * Call the method doWork() from each machine.
